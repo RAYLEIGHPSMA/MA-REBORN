@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA REB-ORN - Moroccan Street Wear Revolution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MA REB-ORN</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Shop</a></li>
+                <li><a href="#support">Support</a></li>
+                <li class="cart-icon" onclick="toggleCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <article class="hero-content">
+                <h1>MA REB-ORN</h1>
+                <p>Moroccan Street Wear Revolution - Gen Z Style</p>
+                <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                    Shop Now
+                </button>
+            </article>
+        </section>
+
+        <section class="products" id="products">
+            <h2 class="section-title">Latest Collection</h2>
+            <article class="product-grid" id="productGrid">
+                <!-- Products will be loaded here -->
+            </article>
+        </section>
+
+        <section class="support" id="support">
+            <article class="support-container">
+                <h2 class="section-title">Support</h2>
+                <form action="https://formsubmit.co/ma.reborn.contact@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New Support Request - MA REB-ORN">
+                    <input type="hidden" name="_next" value=" ma.reborn.contact@gmail.com">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="problem">Your Problem *</label>
+                        <textarea id="problem" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <article class="footer-content">
+            <section class="footer-section">
+                <h3>MA REB-ORN</h3>
+                <p>Moroccan Street Wear Brand - Redefining Urban Style</p>
+            </section>
+            <section class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: ma.reborn.contact@gmail.com</p>
+            </section>
+            <section class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ma_reb_orn/" target="_blank" aria-label="Instagram">📷</a>
+                    <a href="https://www.tiktok.com/@ma_reb_orn" target="_blank" aria-label="TikTok">🎵</a>
+                </div>
+            </section>
+        </article>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MA REB-ORN. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <aside class="cart-modal" id="cartModal">
+        <article class="cart-content">
+            <header class="cart-header">
+                <h2>Your Cart</h2>
+                <span class="close-cart" onclick="toggleCart()">×</span>
+            </header>
+            <section id="cartItems"></section>
+            <footer class="cart-total" id="cartTotal" style="display:none;">
+                <div class="total-price">
+                    <span>Total:</span>
+                    <span id="totalPrice">0 DH</span>
+                </div>
+                <button class="btn-primary checkout-btn" onclick="checkout()">Checkout</button>
+            </footer>
+        </article>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
